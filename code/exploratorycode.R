@@ -59,7 +59,7 @@ boxplot0.5
 
 #exploratory analysis
 
-datacellprov = provinces
+datacellprov = province_stats
 datacellprov
 datacellprov = datacellprov[,6:7]
 datacellprov
@@ -68,6 +68,7 @@ boxplot(datacellprov)
 
 
 #boxplot
+
 
 databoxprov = melt(datacellprov)
 databoxprov
