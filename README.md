@@ -18,6 +18,7 @@ The repository is organized into 2 folders: `data`, and `code`
 # Data structure
 
 * `data` -> .csv file of the archaeological data used for the exploratory analysis
+* `code`->
 * `exploratorycode` -> previous exploratory code used (we used here three old datasets: datacell 0.5, datacell 1 y data province ---> not included in the repository)
 * `exploratorycode_2` -> newest exploratory code used for the paper published (we used here two datasets: `deg_0.5_stats.csv`  y `province_stats.csv`)
 
