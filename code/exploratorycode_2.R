@@ -30,9 +30,22 @@ boxplot(datacell0.5)
 
 databox0.5 = datacell0.5
 databox0.5 = melt(databox0.5)
+levels(databox0.5$variable) <- c("Roman road buffer percentage", "Modern road buffer percentage")
 databox0.5
-boxplot0.5 = ggplot(databox0.5, aes (x=variable, y=value, fill=variable)) + geom_boxplot(varwidth = TRUE, alpha=0.2) + ggtitle("0.5 degree cell") + theme (plot.title = element_text(hjust = 0.5)) + xlab("") + ylab ("P") + scale_fill_discrete(name = "") + theme(legend.position='none')
+#boxplot0.5 = ggplot(databox0.5, aes (x=variable, y=value, fill=variable)) + geom_boxplot(varwidth = TRUE, alpha=0.2) + ggtitle("0.5 degree cell") + theme (plot.title = element_text(hjust = 0.5)) + xlab("") + ylab ("P")  + scale_fill_discrete(name = "") + theme(legend.position='none') 
+
+boxplot0.5 = ggplot(databox0.5, aes(x = variable, y = value, fill = variable)) + 
+  geom_boxplot(varwidth = TRUE, alpha = 0.2) + 
+  ggtitle("0.5 degree cell") + 
+  theme(plot.title = element_text(hjust = 0.5, size = 15)) + 
+  xlab("") + 
+  ylab("P") + 
+  scale_fill_discrete(name = "") + 
+  theme(legend.position = 'none', 
+        axis.text.x = element_text(size = 14))  # Aumenta tamaño de las variables en X
+
 boxplot0.5
+
 
 
 # provinces # no regular cells
@@ -51,8 +64,11 @@ boxplot(datacellprov)
 
 
 databoxprov = melt(datacellprov)
+levels(databoxprov$variable) <- c("Roman road buffer percentage", "Modern road buffer percentage")
 databoxprov
-boxplotprovinces = ggplot(databoxprov, aes (x=variable, y=value, fill=variable)) + geom_boxplot(varwidth = TRUE, alpha=0.2) + ggtitle("Provinces") + theme (plot.title = element_text(hjust = 0.5)) + xlab("") + ylab ("P") + scale_fill_discrete(name = "") 
+boxplotprovinces = ggplot(databoxprov, aes (x=variable, y=value, fill=variable)) + geom_boxplot(varwidth = TRUE, alpha=0.2) + ggtitle("Provinces") + theme (plot.title = element_text(hjust = 0.5, size = 15)) + xlab("") + ylab ("P") + scale_fill_discrete(name = "") + 
+  theme(legend.position = 'none', 
+        axis.text.x = element_text(size = 14)) 
 boxplotprovinces
 
 ### all together
