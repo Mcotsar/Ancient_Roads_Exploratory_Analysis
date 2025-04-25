@@ -62,14 +62,29 @@ boxplot(datacellprov)
 
 #boxplot
 
+boxplotprovinces = ggplot(databoxprov, aes(x = variable, y = value, fill = variable)) +
+  geom_boxplot(varwidth = TRUE, alpha = 0.2) +
+  ggtitle("Provinces") +
+  theme(plot.title = element_text(hjust = 0.5, size = 15)) +
+  xlab("") +
+  ylab("P") +
+  scale_fill_discrete(name = "") +
+  scale_y_continuous(limits = c(0, 100)) +  # <-- Aquí fijas el rango del eje Y
+  theme(
+    legend.position = 'none',
+    axis.text.x = element_text(size = 14)
+  )
 
-databoxprov = melt(datacellprov)
-levels(databoxprov$variable) <- c("Roman road buffer percentage", "Modern road buffer percentage")
-databoxprov
-boxplotprovinces = ggplot(databoxprov, aes (x=variable, y=value, fill=variable)) + geom_boxplot(varwidth = TRUE, alpha=0.2) + ggtitle("Provinces") + theme (plot.title = element_text(hjust = 0.5, size = 15)) + xlab("") + ylab ("P") + scale_fill_discrete(name = "") + 
-  theme(legend.position = 'none', 
-        axis.text.x = element_text(size = 14)) 
 boxplotprovinces
+
+
+# databoxprov = melt(datacellprov)
+# levels(databoxprov$variable) <- c("Roman road buffer percentage", "Modern road buffer percentage")
+# databoxprov
+# boxplotprovinces = ggplot(databoxprov, aes (x=variable, y=value, fill=variable)) + geom_boxplot(varwidth = TRUE, alpha=0.2) + ggtitle("Provinces") + theme (plot.title = element_text(hjust = 0.5, size = 15)) + xlab("") + ylab ("P") + scale_fill_discrete(name = "") + 
+#   theme(legend.position = 'none', 
+#         axis.text.x = element_text(size = 14)) 
+
 
 ### all together
 
