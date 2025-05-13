@@ -4,7 +4,7 @@ Exploratory data to compare modern and Roman roads
 
 
 
-This repository contains data and scripts used in the following preprint (coming soon!)
+This repository contains data and scripts used in the following preprint: Pazout et al. The road network structure of the Roman Empire reveals the centrality of provincial capitals.
 
 
 The repository is organized into 2 folders: `data`, and `code`
